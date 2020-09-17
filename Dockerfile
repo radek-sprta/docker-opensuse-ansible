@@ -8,12 +8,12 @@ ENV pip_packages "ansible cryptography"
 RUN zypper install -y \
        sudo systemd systemd-sysvinit \
        wget libffi-devel libopenssl-devel \
-       python-pip python-devel python-setuptools python-wheel \
+       python3-pip python3-devel python3-setuptools python3-wheel \
     && zypper clean --all \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
 
 # Install Ansible via pip.
-RUN pip install $pip_packages
+RUN pip3 install $pip_packages
 
 COPY initctl_faker .
 RUN chmod +x initctl_faker \
