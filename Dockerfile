@@ -1,7 +1,6 @@
 FROM opensuse/leap:latest
 LABEL maintainer="Radek Sprta <mail@radeksprta.eu>"
 
-ENV DEBIAN_FRONTEND noninteractive
 ENV pip_packages "ansible cryptography"
 
 # Install dependencies.
