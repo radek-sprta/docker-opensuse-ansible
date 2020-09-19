@@ -1,4 +1,4 @@
-FROM opensuse/leap:latest
+FROM opensuse/leap:15.2
 LABEL maintainer="Radek Sprta <mail@radeksprta.eu>"
 
 ENV pip_packages "ansible cryptography"
@@ -14,17 +14,14 @@ RUN zypper install -y \
 # Install Ansible via pip.
 RUN pip3 install $pip_packages
 
-COPY initctl_faker .
-RUN chmod +x initctl_faker \
-    && rm -rf /sbin/initctl \
-    && ln -s /initctl_faker /sbin/initctl
-
 # Install Ansible inventory file.
 RUN mkdir -p /etc/ansible \
     && echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
-# Make sure systemd doesn't start agettys on tty[1-6].
-RUN rm -f /usr/lib/systemd/system/multi-user.target.wants/getty.target
+# Remove unnecessary getty and udev targets that result in high CPU usage when using
+# multiple containers with Molecule (https://github.com/ansible/molecule/issues/1104)
+RUN rm -f /usr/lib/systemd/system/systemd*udev* \
+    && rm -f /usr/lib/systemd/system/getty.target
 
-VOLUME ["/sys/fs/cgroup"]
+VOLUME ["/sys/fs/cgroup", "/tmp", "/run"]
 CMD ["/usr/lib/systemd/systemd"]

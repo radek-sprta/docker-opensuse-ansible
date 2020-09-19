@@ -11,7 +11,7 @@ OpenSuse container for Ansible playbook and role testing in Molecule.
 The simplest way to run the container is the following command:
 
 ```bash
-docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro rsprta/opensuse-ansible:latest` 
+docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro rsprta/opensuse-ansible
 ```
 
 Or in `molecule.yml`:
@@ -19,8 +19,8 @@ Or in `molecule.yml`:
 ```yaml
 platforms:
   - name: instance
-    image: docker.io/rsprta/opensuse-ansible
-    command: ''
+    image: rsprta/opensuse-ansible
+    command: ""
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     privileged: true
@@ -28,7 +28,7 @@ platforms:
 ```
 
 ## Contact
-[mail@radeksprta.eu](mailto:mail@radeksprta.eu)  
+[mail@radeksprta.eu](mailto:mail@radeksprta.eu)
 [incoming+radek-sprta/docker-opensuse-ansible@gitlab.com](incoming+radek-sprta/docker-opensuse-ansible@gitlab.com)
 
 ## License
