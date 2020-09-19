@@ -1,4 +1,4 @@
-FROM opensuse/leap:15.2
+FROM opensuse/leap:15.1
 LABEL maintainer="Radek Sprta <mail@radeksprta.eu>"
 
 ENV pip_packages "ansible cryptography"
