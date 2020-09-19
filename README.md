@@ -1,8 +1,8 @@
 # OpenSuse Ansible
 
 ## Quick reference
--	**Maintained by**: [Radek Sprta](https://gitlab.com/radek-sprta)
--	**Where to get help**: [Repository Issues](https://gitlab.com/radek-sprta/docker-opensuse-ansible/-/issues)
+- **Maintained by**: [Radek Sprta](https://gitlab.com/radek-sprta)
+- **Where to get help**: [Repository Issues](https://gitlab.com/radek-sprta/docker-opensuse-ansible/-/issues)
 
 ## Description
 OpenSuse container for Ansible playbook and role testing in Molecule.
@@ -28,8 +28,8 @@ platforms:
 ```
 
 ## Contact
-[mail@radeksprta.eu](mailto:mail@radeksprta.eu)
-[incoming+radek-sprta/docker-opensuse-ansible@gitlab.com](incoming+radek-sprta/docker-opensuse-ansible@gitlab.com)
+- [mail@radeksprta.eu](mailto:mail@radeksprta.eu)
+- [incoming+radek-sprta/docker-opensuse-ansible@gitlab.com](incoming+radek-sprta/docker-opensuse-ansible@gitlab.com)
 
 ## License
 GNU General Public License v3
