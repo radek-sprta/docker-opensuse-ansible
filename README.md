@@ -28,7 +28,7 @@ platforms:
 ```
 
 ## Contact
-[mail@radeksprta.eu](mailto:mail@radeksprta.eu)
+[mail@radeksprta.eu](mailto:mail@radeksprta.eu)  
 [incoming+radek-sprta/docker-opensuse-ansible@gitlab.com](incoming+radek-sprta/docker-opensuse-ansible@gitlab.com)
 
 ## License
