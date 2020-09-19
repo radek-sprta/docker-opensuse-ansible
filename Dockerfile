@@ -14,11 +14,6 @@ RUN zypper install -y \
 # Install Ansible via pip.
 RUN pip3 install $pip_packages
 
-COPY initctl_faker .
-RUN chmod +x initctl_faker \
-    && rm -rf /sbin/initctl \
-    && ln -s /initctl_faker /sbin/initctl
-
 # Install Ansible inventory file.
 RUN mkdir -p /etc/ansible \
     && echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
