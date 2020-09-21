@@ -13,9 +13,18 @@ ENV pip_packages "ansible cryptography"
 
 # Install dependencies.
 RUN zypper install -y \
-       sudo systemd systemd-sysvinit \
-       wget libffi-devel libopenssl-devel \
-       python3-pip python3-devel python3-setuptools python3-wheel \
+       gzip \
+       libffi-devel \
+       libopenssl-devel \
+       python3-devel \
+       python3-pip \
+       python3-setuptools \
+       python3-wheel \
+       sudo \
+       systemd \
+       systemd-sysvinit \
+       tar \
+       wget \
     && zypper clean --all \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
 
