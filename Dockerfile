@@ -1,13 +1,13 @@
 FROM opensuse/leap:15.1
-MAINTAINER Radek Sprta <mail@radeksprta.eu>
 
-LABEL org.opencontainers.image.authors "Radek Sprta <mail@radeksprta.eu>"
-LABEL org.opencontainers.image.description "OpenSuse container for Ansible playbook and role testing in Molecule."
-LABEL org.opencontainers.image.documentation "https://radek-sprta.gitlab.io/docker-opensuse-ansible"
-LABEL org.opencontainers.image.licenses "GPL-3.0"
-LABEL org.opencontainers.image.source "https://gitlab.com/radek-sprta/docker-opensuse-ansible"
-LABEL org.opencontainers.image.title "rsprta/opensuse-ansible"
-LABEL org.opencontainers.image.url "https://gitlab.com/radek-sprta/docker-opensuse-ansible"
+LABEL maintainer="Radek Sprta <mail@radeksprta.eu>"
+LABEL org.opencontainers.image.authors="Radek Sprta <mail@radeksprta.eu>"
+LABEL org.opencontainers.image.description="OpenSuse container for Ansible playbook and role testing in Molecule."
+LABEL org.opencontainers.image.documentation="https://radek-sprta.gitlab.io/docker-opensuse-ansible"
+LABEL org.opencontainers.image.licenses="GPL-3.0"
+LABEL org.opencontainers.image.source="https://gitlab.com/radek-sprta/docker-opensuse-ansible"
+LABEL org.opencontainers.image.title="rsprta/opensuse-ansible"
+LABEL org.opencontainers.image.url="https://gitlab.com/radek-sprta/docker-opensuse-ansible"
 
 ENV pip_packages "ansible cryptography"
 
