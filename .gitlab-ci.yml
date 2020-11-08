@@ -39,14 +39,6 @@ amd64:latest:
     PLATFORM: linux/amd64
     VERSION: latest
 
-arm64:latest:
-  extends:
-    - .build
-    - .docker-setup
-  variables:
-    PLATFORM: linux/arm64
-    VERSION: latest
-
 # 15.2 tag
 amd64:15.2:
   extends:
@@ -54,14 +46,6 @@ amd64:15.2:
     - .docker-setup
   variables:
     PLATFORM: linux/amd64
-    VERSION: "15.2"
-
-arm64:15.2:
-  extends:
-    - .build
-    - .docker-setup
-  variables:
-    PLATFORM: linux/arm64
     VERSION: "15.2"
 
 # 15.1 tag
@@ -73,25 +57,14 @@ amd64:15.1:
     PLATFORM: linux/amd64
     VERSION: "15.1"
 
-arm64:15.1:
-  extends:
-    - .build
-    - .docker-setup
-  variables:
-    PLATFORM: linux/arm64
-    VERSION: "15.1"
-
 .deploy:
   extends:
     - .docker-setup
   stage: deploy
   script:
     - |
-      docker buildx build . --push --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6 \
-      --cache-from type=local,src=.cache/linux/amd64 \
-      --cache-from type=local,src=.cache/linux/arm64 \
-      --cache-from type=local,src=.cache/linux/arm/v7 \
-      --cache-from type=local,src=.cache/linux/arm/v6 \
+      docker buildx build . --push --platform "amd64:${VERSION}" \
+      --cache-from "type=local,src=.cache/amd64:${VERSION} \
       --label "org.opencontainers.image.created=${BUILD_DATE}" \
       --label "org.opencontainers.image.revision=${VCS_REF}" \
       --tag ${CI_REGISTRY_IMAGE}:${VERSION} \
