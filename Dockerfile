@@ -12,7 +12,7 @@ LABEL org.opencontainers.image.url="https://gitlab.com/radek-sprta/docker-opensu
 
 ENV pip_packages "ansible cryptography"
 
-# Install dependencies.
+# Install Ansible and dependencies.
 RUN zypper install -y \
        gzip \
        libffi-devel \
@@ -26,11 +26,16 @@ RUN zypper install -y \
        systemd-sysvinit \
        tar \
        wget \
+    && pip3 install $pip_packages \
+    && zypper remove -y \
+       libffi-devel \
+       libopenssl-devel \
+       python3-devel \
+       python3-pip \
+       python3-setuptools \
+       python3-wheel \
     && zypper clean --all \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
-
-# Install Ansible via pip.
-RUN pip3 install $pip_packages
 
 # Install Ansible inventory file.
 RUN mkdir -p /etc/ansible \
