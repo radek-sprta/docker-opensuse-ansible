@@ -1,4 +1,5 @@
-FROM opensuse/leap:latest
+ARG VERSION=15
+FROM opensuse/leap:$VERSION
 
 LABEL maintainer="Radek Sprta <mail@radeksprta.eu>"
 LABEL org.opencontainers.image.authors="Radek Sprta <mail@radeksprta.eu>"
