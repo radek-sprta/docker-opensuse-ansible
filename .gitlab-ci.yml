@@ -29,6 +29,7 @@ services:
     paths:
       - .cache
     expire_in: 1 hour
+  retry: 1
 
 # Latest tag
 amd64:latest:
