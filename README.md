@@ -1,4 +1,4 @@
-# OpenSuse Ansible
+# OpenSuse Ansible [![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/rsprta/opensuse-ansible)](https://hub.docker.com/r/rsprta/opensuse-ansible) [![Docker Pulls](https://img.shields.io/docker/pulls/rsprta/opensuse-ansible)](https://hub.docker.com/r/rsprta/opensuse-ansible) [![Pipeline status](https://gitlab.com/radek-sprta/docker-opensuse-ansible/badges/master/pipeline.svg)](https://gitlab.com/radek-sprta/docker-opensuse-ansible/commits/master)
 
 ## Quick reference
 - **Maintained by**: [Radek Sprta](https://gitlab.com/radek-sprta)
