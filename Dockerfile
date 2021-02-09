@@ -14,6 +14,8 @@ ENV pip_packages "ansible cryptography"
 
 # Install Ansible and dependencies.
 RUN zypper install -y \
+       cargo \
+       gcc \
        gzip \
        libffi-devel \
        libopenssl-devel \
@@ -26,8 +28,11 @@ RUN zypper install -y \
        systemd-sysvinit \
        tar \
        wget \
+    && pip3 install --upgrade pip \
     && pip3 install $pip_packages \
     && zypper remove -y \
+       cargo \
+       gcc \
        libffi-devel \
        libopenssl-devel \
        python3-devel \
